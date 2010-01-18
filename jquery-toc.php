@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: jQuery Table of Contents
-Plugin URI: http://www.tedcarnahan.com/jquery-toc
+Plugin URI: http://www.tedcarnahan.com/2010/01/10/wordpress-jquery-table-of-contents-plugin/
 Description: Adds a table of contents to posts and pages based on HTML header tags using jQuery.
-Version: 1.1
+Version: 1.2
 Author: Ted Carnahan
 Author URI: http://www.tedcarnahan.com/
 
@@ -25,7 +25,7 @@ Author URI: http://www.tedcarnahan.com/
 
 */
 
-DEFINE("JQUERY_TOC_URL", WP_PLUGIN_URL . "/jquery-toc");
+DEFINE("JQUERY_TOC_URL", WP_PLUGIN_URL . "/jquery-table-of-contents");
 
 add_action('init', 'jquery_toc_init');
 add_action('admin_init', 'jquery_toc_options_init');
@@ -54,7 +54,7 @@ function jquery_toc_uninstall() {
 function jquery_toc_init() {
   wp_enqueue_script('jquery-toc', JQUERY_TOC_URL . '/jquery-toc.js', array('jquery'));
   wp_localize_script('jquery-toc', 'jQueryTOC', get_option('jquery_toc_options'));
-  wp_enqueue_style('jquery-toc', '/wp-content/plugins/jquery-toc/jquery-toc.css');
+  wp_enqueue_style('jquery-toc', '/wp-content/plugins/jquery-table-of-contents/jquery-toc.css');
 }
 
 function jquery_toc_options_init() {
